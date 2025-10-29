@@ -1,58 +1,20 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url(../assets/WhatsApp\ Image\ 2025-10-29\ at\ 10.58.11.jpeg);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-}
 
-.login {
-    width: 300px;
-    margin: 100px auto;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    text-align: center;
-}
-
-.logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    position: relative;
-    top: -50px;
-    left: calc(50% -50px);
-}
-
-.login p {
-    margin: 0;
-    padding: 0;
+.quienes-somos {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    color: #222;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
-.login input{
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.boton-login {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #1daf5c;
-    color: #fff;
-    font-size: 17px;
-    border-radius: 20px;
-}
-
-.boton-login:hover{
-    cursor: pointer;
-    background: #6cd198;
+.quienes-somos h1{
+    color: rgb(6, 100, 56);
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
 }
