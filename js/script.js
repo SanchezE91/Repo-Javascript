@@ -1,20 +1,20 @@
 // VARIABLES: ES UN ESPACIO DE MEMORIA RESERVADO PARA ALMACENAR INFORMACION IMPORTANTE DEL PROGRAMA //
 
 // DECLARACION:
- let cliente;
+ //let cliente;
 
 // ASIGNACION DE VALORES:
-cliente = "Cynthia" 
+//cliente = "Cynthia" 
 
-console.log (cliente); //VERIFICA EN LA CONSOLA //
+//console.log (cliente); //VERIFICA EN LA CONSOLA //
 
 // INICIALIZAR VARIABLES:
-let edad = 35
+//let edad = 35
 
-console.log (edad);
+//console.log (edad);
 
 // CONSTANTE: ES UN VARIABLE CUYO VALOR NO PUEDE MODIFICARSE UNA VEZ QUE HA SIDO ASIGNADO //
 
-const nacimiento = 1990
+//const nacimiento = 1990
 
-console.log (nacimiento)
+//console.log (nacimiento)
