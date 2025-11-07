@@ -19,7 +19,7 @@
 }
 
 .contactanos {
-    font-family: cursive;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
     font-size: large;
     color: #222;
     font-weight: bold;
@@ -43,4 +43,72 @@
     text-decoration: underline;
     font-weight: bold;
     margin-top: 35px;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+}
+
+.redes img {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.whatsapp {
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp img {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.pv-w {
+    background-color: #222;
+    color: #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.busqueda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: #333;
+}
+
+.logosdy {
+    width: 150px;
+    height: 150px;
+    border-radius: 40%;
+    position: relative;
+    top: -50px;
+    left: calc(40% -50px);
+}
+
+.buscador {
+    width: 30%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.boton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(6, 100, 56);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.carrito {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+
 }
