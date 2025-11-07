@@ -72,21 +72,21 @@
     padding: 3px;
 }
 
-.busqueda {
+.Busqueda {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    background-color: #333;
 }
 
 .logosdy {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 40%;
     position: relative;
     top: -50px;
     left: calc(40% -50px);
+    margin: 5% 20% 1% 5%;
+
 }
 
 .buscador {
@@ -104,11 +104,87 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .carrito {
-    width: 20px;
+    width: 40px;
     height: auto;
     cursor: pointer;
+    margin-left: 20%;
+}
 
+.navegacion {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px 0;
+  margin-top: -20px;
+}
+
+.lista-enlaces {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-enlace {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-enlace:hover {
+  color: #fff;
+  background-color: rgb(6, 100, 56);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔽 SUBMENÚ */
+.submenu-contenedor {
+  position: relative; /* clave para posicionar el submenú */
+}
+
+.submenu {
+  display: none; /* oculto por defecto */
+  position: absolute;
+  top: 100%; /* aparece justo debajo */
+  left: 0;
+  background-color: #ffffff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 100;
+}
+
+/* Muestra el submenú al pasar el mouse */
+.submenu-contenedor:hover .submenu {
+  display: block;
+}
+
+/* Estilo de los links del submenú */
+.submenu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #222;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: rgb(6, 100, 56);
+  color: #fff;
+}
+
+.d-block-w-100{
+width: 100%;
+height: 500px;
 }
