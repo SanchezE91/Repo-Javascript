@@ -145,15 +145,14 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* 🔽 SUBMENÚ */
 .submenu-contenedor {
-  position: relative; /* clave para posicionar el submenú */
+  position: relative; 
 }
 
 .submenu {
-  display: none; /* oculto por defecto */
+  display: none; 
   position: absolute;
-  top: 100%; /* aparece justo debajo */
+  top: 100%;
   left: 0;
   background-color: #ffffff;
   list-style: none;
@@ -165,12 +164,10 @@
   z-index: 100;
 }
 
-/* Muestra el submenú al pasar el mouse */
 .submenu-contenedor:hover .submenu {
   display: block;
 }
 
-/* Estilo de los links del submenú */
 .submenu li a {
   display: block;
   padding: 10px 20px;
@@ -187,4 +184,165 @@
 .d-block-w-100{
 width: 100%;
 height: 500px;
+}
+
+.iconos-ayuda {
+  display: flex;
+  justify-content: center;
+  gap: 15%;
+  margin-top: 30px;
+}
+
+.iconos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid rgba(6, 100, 56, 0.4);
+  border-radius: 20px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.2); /* fondo translúcido */
+  backdrop-filter: blur(10px); /* efecto glass */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* sombra suave */
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.iconos:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(6, 100, 56, 0.4);
+}
+
+.iconos img {
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.iconos p {
+  margin: 0;
+  font-weight: 600;
+  color: #20884c;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.iconos a {
+  margin-left: 6px;
+  text-decoration: none;
+  color: #aaffc3;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.iconos a:hover {
+  text-decoration: underline;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+h1 {
+  font-size: 2em;
+  color: #222;
+  margin-top: 30%;
+  padding: 3%;
+
+}
+
+.linea {
+  flex-grow: 1; 
+  height: 2px; 
+  background-color: black; 
+  margin-left: 10px;
+}
+
+.contenedor-productos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tarjeta {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.descuento {
+  background-color: #e60000;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px 20px;
+  border-radius: 20px;
+  margin: 10px 0 0 5px; 
+}
+
+.precio-original {
+  color: #888;
+  text-decoration: line-through;
+  margin: 5px 0;
+}
+
+.precio-final {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000;
+  margin: 5px 0;
+}
+
+.marcas {
+  padding: 40px 0;
+}
+
+.marcas h2 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.carrusel {
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 50px;
+  animation: scroll 25s linear infinite;
+}
+
+.carrusel-track img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.carrusel-track img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
