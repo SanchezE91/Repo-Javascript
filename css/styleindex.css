@@ -1,12 +1,17 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../assets/WhatsApp\ Image\ 2025-10-29\ at\ 10.58.11.jpeg);
+    background-image: url(../assets/loginlogo.jpeg);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 80%;
     background-position: center;
     background-attachment: fixed;
     font-family: Arial, sans-serif;
+}
+
+.dropdown {
+    margin-left: 10%;
+    margin-top: 5%;
 }
 
 .login {

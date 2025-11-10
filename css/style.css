@@ -228,7 +228,7 @@
 .iconos a {
   margin-left: 6px;
   text-decoration: none;
-  color: #aaffc3;
+  color: #46af65;
   font-weight: 500;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
@@ -266,13 +266,17 @@ h1 {
 }
 
 .tarjeta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empuja el botón hacia el final */
   width: 250px;
-  border: 1px solid #ddd;
+  min-height: 520px; /* ajustá según el contenido */
+  padding: 10px;
   border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: white;
+  position: relative;
 }
-
 .tarjeta img {
   width: 100%;
   height: auto;
@@ -280,12 +284,22 @@ h1 {
 }
 
 .descuento {
-  background-color: #e60000;
-  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: rgb(255, 255, 255);
+  padding: 4px 10px;
+  border-radius: 10px;
   font-weight: bold;
-  padding: 6px 20px;
-  border-radius: 20px;
-  margin: 10px 0 0 5px;
+  font-size: 14px;
+}
+
+.descripcion {
+  margin-top: 80px; /* deja espacio por el descuento */
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 60px; /* asegura que empiecen alineados */
 }
 
 .precio-original {
