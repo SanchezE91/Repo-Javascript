@@ -1,67 +1,33 @@
-alert("JS cargado!");
+//Así el JS espera a que cargue el HTML antes de leer los elementos.//
+document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.getElementById("registrar-formulario");
 
+    formulario.addEventListener("submit", function (e) {
+        e.preventDefault(); // Evita que recargue la página
 
-// --- VALIDACIONES SUPER BÁSICAS ---
+        const nombreApellido = document.getElementById("nombreApellido").value.trim();
+        const edad = parseInt(document.getElementById("edad").value);
 
-// Validar que el nombre solo tenga letras
-function soloLetras(texto) {
-    // Recorro letra por letra
-    for (let i = 0; i < texto.length; i++) {
-        let caracter = texto[i];
-
-        // Si el caracter NO está entre a-z o A-Z y tampoco es un espacio → ERROR
-        if (
-            !(caracter >= "a" && caracter <= "z") &&
-            !(caracter >= "A" && caracter <= "Z") &&
-            caracter !== " "
-        ) {
-            return false; // Hay algo raro
+        // Validaciones
+        if (nombreApellido === "") {
+            alert("Por favor ingresa tu nombre y apellido.");
+            return;
         }
-    }
 
-    return true; // Todo bien
-}
+        if (isNaN(edad)) {
+            alert("Por favor ingresa una edad válida.");
+            return;
+        }
 
-// Validar edad
-function validarEdad(edadIngresada) {
-    let edad = parseInt(edadIngresada);
+        if (edad < 18) {
+            alert("Debes ser mayor de 18 para ingresar a la página de ventas.");
+            return;
+        }
 
-    if (isNaN(edad)) {
-        return "La edad debe ser un número.";
-    }
+        // Todo OK → Bienvenida + redirección
+        alert("Bienvenido " + nombreApellido);
 
-    if (edad < 18) {
-        return "Debes tener 18 años o más.";
-    }
-
-    return ""; // Todo OK
-}
-
-
-// --- FORMULARIO ---
-
-let form = document.getElementById("registrar-formulario");
-
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let nombre = document.getElementById("nombreApellido").value.trim();
-    let edad = document.getElementById("edad").value.trim();
-
-    // Validar nombre
-    if (!soloLetras(nombre)) {
-        alert("El nombre solo puede contener letras.");
-        return;
-    }
-
-    // Validar edad
-    let errorEdad = validarEdad(edad);
-    if (errorEdad !== "") {
-        alert(errorEdad);
-        return;
-    }
-
-    // SI TODO ESTÁ BIEN
-    alert("Registro completado. ¡Bienvenido!");
-    window.location.href = "../pages/pagina-ventas.html";
+        // Redirigir
+        window.location.href = "./pages/pagina-ventas.html";
+    });
 });
