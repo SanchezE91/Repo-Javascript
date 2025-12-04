@@ -106,3 +106,62 @@ body {
   border-radius: 40%;
   margin-top: 10px;
 }
+
+/* ----------- RESPONSIVE GENERAL ----------- */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .nav-list li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .nav-list a {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  /* LOGIN */
+  .login {
+    width: 90%;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    left: calc(50% - 50px);
+  }
+
+  .boton-login {
+    height: 45px;
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  .footer-contenido img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ----------- EXTRA PARA CELULARES PEQUEÑOS ----------- */
+@media (max-width: 480px) {
+
+  .nav-list a {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  .login {
+    padding: 15px;
+  }
+
+  .logo {
+    width: 85px;
+    height: 85px;
+  }
+}

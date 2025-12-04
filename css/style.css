@@ -702,3 +702,172 @@ h4 {
   background: #089e5d;
   transform: scale(1.05);
 }
+
+/* ============================
+     RESPONSIVE GENERAL
+=============================== */
+
+/* Tablets y celulares grandes */
+@media (max-width: 992px) {
+
+  /* Navegación */
+  .lista-enlaces {
+    gap: 40px;
+  }
+
+  .logosdy {
+    width: 90px;
+    height: 90px;
+    top: -30px;
+    left: calc(50% - 45px);
+    margin: 10px auto;
+  }
+
+  .buscador {
+    width: 50%;
+  }
+
+  .carrito {
+    margin-left: 0;
+  }
+
+  /* Productos */
+  .tarjeta {
+    width: 45%;
+  }
+
+  /* Carrusel */
+  .carrusel-track img {
+    height: 45px;
+  }
+
+  /* Envíos */
+  .envios {
+    font-size: 30px;
+    padding: 15px;
+    width: 90%;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .navegacion {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .lista-enlaces {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-enlace {
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+  /* Buscador */
+  .Busqueda {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .buscador {
+    width: 80%;
+  }
+
+  .boton {
+    width: 80%;
+  }
+
+  /* Carrito */
+  .carrito-contenedor {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .carrito-lista,
+  .carrito-resumen {
+    width: 100%;
+  }
+
+  /* Productos */
+  .tarjeta {
+    width: 80%;
+  }
+
+  /* Iconos */
+  .iconos-ayuda {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* Secciones */
+  .quienes-somos,
+  .contactanos,
+  .ubicacion {
+    padding: 20px;
+    width: 90%;
+  }
+
+  /* Mapita */
+  .ubicacion iframe {
+    height: 260px;
+  }
+
+  /* Carrusel */
+  .carrusel-track img {
+    height: 40px;
+    gap: 25px;
+  }
+
+  /* Envíos */
+  .envios {
+    font-size: 24px;
+    flex-direction: column;
+  }
+
+  .envios img {
+    width: 45px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Celulares chicos */
+@media (max-width: 480px) {
+
+  /* Logo */
+  .logosdy {
+    width: 70px;
+    height: 70px;
+    left: calc(50% - 35px);
+  }
+
+  /* Tarjetas */
+  .tarjeta {
+    width: 95%;
+  }
+
+  .descripcion {
+    font-size: 14px;
+  }
+
+  /* Carrusel */
+  .carrusel-track img {
+    height: 30px;
+  }
+
+  /* Footer */
+  .footer-contenido img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Títulos largos */
+  h1, h2, h4 {
+    font-size: 1.5rem;
+  }
+}
