@@ -111,11 +111,11 @@ body {
    RESPONSIVE – Centrar logo de REGISTRATE / LOGIN
    ======================================================= */
 
-/* ----------- 📱 Para 939px ----------- */
+/* ----------- 📱 Para 992px ----------- */
 @media (max-width: 939px) {
     .logo {
         position: relative;
-        left: 50% !important;
+        left: 28% !important;
         transform: translateX(-50%) !important;
         top: -40px; /* un poco menos de desplazamiento */
         width: 140px !important;
@@ -137,7 +137,7 @@ body {
 }
 
 /* ----------- 📱 Para 480px (celulares) ----------- */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .logo {
         width: 120px !important;
         height: 120px !important;
