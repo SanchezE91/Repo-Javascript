@@ -107,61 +107,45 @@ body {
   margin-top: 10px;
 }
 
-/* ----------- RESPONSIVE GENERAL ----------- */
-@media (max-width: 768px) {
+/* =======================================================
+   RESPONSIVE – Centrar logo de REGISTRATE / LOGIN
+   ======================================================= */
 
-  /* NAV */
-  .nav-list li {
-    display: block;
-    margin-bottom: 10px;
-  }
+/* ----------- 📱 Para 939px ----------- */
+@media (max-width: 939px) {
+    .logo {
+        position: relative;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: -40px; /* un poco menos de desplazamiento */
+        width: 140px !important;
+        height: 140px !important;
+    }
 
-  .nav-list a {
-    display: block;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  /* LOGIN */
-  .login {
-    width: 90%;
-    margin-top: 40px;
-    padding: 20px;
-  }
-
-  .logo {
-    width: 100px;
-    height: 100px;
-    top: -30px;
-    left: calc(50% - 50px);
-  }
-
-  .boton-login {
-    height: 45px;
-    font-size: 16px;
-  }
-
-  /* FOOTER */
-  .footer-contenido img {
-    width: 80px;
-    height: 80px;
-  }
+    .login {
+        margin-top: 80px !important;
+    }
 }
 
-/* ----------- EXTRA PARA CELULARES PEQUEÑOS ----------- */
+/* ----------- 📱 Para 768px ----------- */
+@media (max-width: 768px) {
+    .logo {
+        width: 130px !important;
+        height: 130px !important;
+        top: -30px !important;
+    }
+}
+
+/* ----------- 📱 Para 480px (celulares) ----------- */
 @media (max-width: 480px) {
+    .logo {
+        width: 120px !important;
+        height: 120px !important;
+        top: -20px !important;
+    }
 
-  .nav-list a {
-    font-size: 0.8rem;
-    padding: 8px 12px;
-  }
-
-  .login {
-    padding: 15px;
-  }
-
-  .logo {
-    width: 85px;
-    height: 85px;
-  }
+    .login {
+        width: 85% !important;
+        margin-top: 70px !important;
+    }
 }

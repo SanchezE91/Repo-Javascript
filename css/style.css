@@ -703,171 +703,144 @@ h4 {
   transform: scale(1.05);
 }
 
-/* ============================
-     RESPONSIVE GENERAL
-=============================== */
+/* ==========================================================
+   WHATSAPP FLOTANTE – RESPONSIVE (Opción A)
+   ========================================================== */
+@media (max-width: 939px) {
+    .pv-w {
+        position: fixed !important;
+        bottom: 20px;
+        right: 20px;
+        background: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: 9999;
+    }
 
-/* Tablets y celulares grandes */
-@media (max-width: 992px) {
+    .pv-w p {
+        display: none; /* ocultamos el texto */
+    }
 
-  /* Navegación */
-  .lista-enlaces {
-    gap: 40px;
-  }
-
-  .logosdy {
-    width: 90px;
-    height: 90px;
-    top: -30px;
-    left: calc(50% - 45px);
-    margin: 10px auto;
-  }
-
-  .buscador {
-    width: 50%;
-  }
-
-  .carrito {
-    margin-left: 0;
-  }
-
-  /* Productos */
-  .tarjeta {
-    width: 45%;
-  }
-
-  /* Carrusel */
-  .carrusel-track img {
-    height: 45px;
-  }
-
-  /* Envíos */
-  .envios {
-    font-size: 30px;
-    padding: 15px;
-    width: 90%;
-  }
+    .pv-w img {
+        width: 60px !important;
+        height: 60px !important;
+        display: block;
+        filter: drop-shadow(0 0 5px black);
+    }
 }
 
-/* Celulares */
+/* ==========================================================
+   AJUSTES 939px – RESPONSIVE GENERAL
+   ========================================================== */
+@media (max-width: 939px) {
+
+    /* LOGO MÁS GRANDE Y CENTRADO */
+    header .logo img {
+        width: 180px !important;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* MENÚ CENTRADO */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    /* CARRUSEL */
+    .carousel-item img {
+        object-fit: cover !important;
+        height: 250px !important;
+        width: 100%;
+    }
+
+    /* ICONO "COSTOS DE ENVÍO" CENTRADO */
+    .beneficios, .costos-envio, .envio-container {
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .beneficios img, .costos-envio img {
+        margin: 0 auto !important;
+    }
+}
+
+/* ==========================================================
+   AJUSTES 768px
+   ========================================================== */
 @media (max-width: 768px) {
 
-  /* NAV */
-  .navegacion {
-    flex-direction: column;
-    padding: 15px 0;
-  }
+    /* LOGO MÁS CENTRADO */
+    header .logo img {
+        width: 160px !important;
+    }
 
-  .lista-enlaces {
-    flex-direction: column;
-    gap: 15px;
-  }
+    /* MENÚ */
+    nav ul {
+        gap: 12px;
+    }
 
-  .nav-enlace {
-    padding: 10px 0;
-    font-size: 1rem;
-  }
+    /* CARRUSEL MÁS BAJO */
+    .carousel-item img {
+        height: 220px !important;
+    }
 
-  /* Buscador */
-  .Busqueda {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .buscador {
-    width: 80%;
-  }
-
-  .boton {
-    width: 80%;
-  }
-
-  /* Carrito */
-  .carrito-contenedor {
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .carrito-lista,
-  .carrito-resumen {
-    width: 100%;
-  }
-
-  /* Productos */
-  .tarjeta {
-    width: 80%;
-  }
-
-  /* Iconos */
-  .iconos-ayuda {
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  /* Secciones */
-  .quienes-somos,
-  .contactanos,
-  .ubicacion {
-    padding: 20px;
-    width: 90%;
-  }
-
-  /* Mapita */
-  .ubicacion iframe {
-    height: 260px;
-  }
-
-  /* Carrusel */
-  .carrusel-track img {
-    height: 40px;
-    gap: 25px;
-  }
-
-  /* Envíos */
-  .envios {
-    font-size: 24px;
-    flex-direction: column;
-  }
-
-  .envios img {
-    width: 45px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
+    /* CARDS */
+    .contenedor-de-cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
 }
 
-/* Celulares chicos */
+/* ==========================================================
+   AJUSTES 480px – PARA CELULARES
+   ========================================================== */
 @media (max-width: 480px) {
 
-  /* Logo */
-  .logosdy {
-    width: 70px;
-    height: 70px;
-    left: calc(50% - 35px);
-  }
+    /* WhatsApp flotante más chico */
+    .pv-w img {
+        width: 55px !important;
+        height: 55px !important;
+    }
 
-  /* Tarjetas */
-  .tarjeta {
-    width: 95%;
-  }
+    /* Logo centrado y más compacto */
+    header .logo img {
+        width: 140px !important;
+    }
 
-  .descripcion {
-    font-size: 14px;
-  }
+    /* Menú tipo lista simple */
+    nav ul {
+        gap: 10px;
+    }
 
-  /* Carrusel */
-  .carrusel-track img {
-    height: 30px;
-  }
+    nav ul li a {
+        font-size: 15px !important;
+    }
 
-  /* Footer */
-  .footer-contenido img {
-    width: 80px;
-    height: 80px;
-  }
+    /* Carrusel más chico */
+    .carousel-item img {
+        height: 180px !important;
+    }
 
-  /* Títulos largos */
-  h1, h2, h4 {
-    font-size: 1.5rem;
-  }
+    /* Cards en 1 columna */
+    .contenedor-de-cards {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Beneficios centrados */
+    .beneficios img {
+        width: 80px !important;
+    }
 }
