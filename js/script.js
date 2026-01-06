@@ -1,58 +1,144 @@
-// SDY HERRAMIENTAS - SIMULADOR INTERACTIVO
+//CARRITO STORAGE 
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// const productos = [
-//  { nombre: "Taladro", precio: 55000 },
-//  { nombre: "Amoladora", precio: 43000 },
-//  { nombre: "Juego de Llaves", precio: 25000 },
-//  { nombre: "Atornillador", precio: 30000 },
-// ];
+//Guardar carrito
+function guardarCarrito() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
 
-// function buscarProductoPorNumero(numero) {
-//  if (numero >= 1 && numero <= productos.length) {
-//    return productos[numero - 1];
-//  }
-//  return null;
-// }
+//PAGINA VENTAS 
+const tarjetas = document.querySelectorAll(".tarjeta");
+const botones = document.querySelectorAll(".btn-carrito");
 
-// alert("Bienvenido a SDY Herramientas");
+if (botones.length > 0) {
+  const productos = [];
 
-// let nombreUsuario = prompt("Ingrese su nombre:");
-// console.log("Nombre ingresado:", nombreUsuario);
+  tarjetas.forEach((tarjeta, index) => {
+    const nombre = tarjeta.querySelector(".descripcion")?.textContent || "";
+    const precioTexto =
+      tarjeta.querySelector(".precio-final")?.textContent || "$0";
+    const precio = Number(precioTexto.replace("$", "").replace(/\./g, ""));
 
-// let lista = "PRODUCTOS DISPONIBLES:\n";
+    productos.push({
+      id: `${window.location.pathname}-${index}`,
+      nombre,
+      precio,
+    });
+  });
 
-// for (let i = 0; i < productos.length; i++) {
-//  lista = lista + (i + 1) + " - " + productos[i].nombre + " ($" + productos[i].precio + ")\n";
-// }
+  botones.forEach((boton, index) => {
+    boton.addEventListener("click", () => {
+      const cantidad = Number(prompt("¿Cuántas unidades querés?"));
 
-// lista = lista + "\nIngrese el número del producto que desea cotizar:";
+      if (isNaN(cantidad) || cantidad <= 0) {
+        alert("Cantidad inválida");
+        return;
+      }
 
-// let seleccion = Number(prompt(lista));
-// console.log("Número de producto elegido:", seleccion);
+      const producto = productos[index];
+      const productoEnCarrito = carrito.find((p) => p.id === producto.id);
 
-// let encontrado = buscarProductoPorNumero(seleccion);
+      if (productoEnCarrito) {
+        productoEnCarrito.cantidad += cantidad;
+      } else {
+        carrito.push({
+          ...producto,
+          cantidad,
+        });
+      }
 
-// if (encontrado) {
-//  alert("Elegiste: " + encontrado.nombre + "\nPrecio: $" + encontrado.precio);
+      guardarCarrito();
+      alert("Producto agregado al carrito");
+    });
+  });
+}
 
-//  let cantidad = Number(prompt("¿Cuántas unidades desea comprar?"));
-//  console.log("Cantidad:", cantidad);
+//PAGINA CARRITO 
+const carritoLista = document.getElementById("carritoLista");
+const totalCarrito = document.getElementById("totalCarrito");
 
-//  let total = encontrado.precio * cantidad;
-//  console.log("Total:", total);
+if (carritoLista && totalCarrito) {
+  function mostrarCarrito() {
+    carritoLista.innerHTML = "";
+    let total = 0;
 
-//  let cuotas = confirm("¿Desea pagar en 3 cuotas?");
-//  console.log("Cuotas:", cuotas);
+    if (carrito.length === 0) {
+      carritoLista.innerHTML = `
+        <p class="carrito-vacio">Tu carrito está vacío</p>
+      `;
+      totalCarrito.textContent = "$0";
+      return;
+    }
 
-//  if (cuotas) {
-//    let totalCuotas = total / 3;
-//    alert("Total: $" + total + "\nEn 3 cuotas de: $" + totalCuotas);
-//  } else {
-//    alert("Total final a pagar: $" + total);
-//  }
-// } else {
-//  alert("No tenemos ese producto.");
-//  console.log("Selección inválida");
-// }
+    carrito.forEach((prod, index) => {
+      const div = document.createElement("div");
+      div.className = "carrito-item";
 
-// alert("Gracias por visitar SDY Herramientas");
+      div.innerHTML = `
+        <div class="carrito-item-info">
+          <span class="carrito-item-nombre">${prod.nombre}</span>
+          <span class="carrito-item-cantidad">
+            Cantidad: ${prod.cantidad}
+          </span>
+        </div>
+
+        <span class="carrito-item-precio">
+          $${prod.precio * prod.cantidad}
+        </span>
+
+        <button class="btn-eliminar">Eliminar</button>
+      `;
+
+      div.querySelector(".btn-eliminar").addEventListener("click", () => {
+        carrito.splice(index, 1);
+        guardarCarrito();
+        mostrarCarrito();
+      });
+
+      carritoLista.appendChild(div);
+      total += prod.precio * prod.cantidad;
+    });
+
+    totalCarrito.textContent = `$${total}`;
+  }
+
+  mostrarCarrito();
+}
+
+//REGISTRO EN INDEX 
+const formularioRegistro = document.getElementById("registrar-formulario");
+
+if (formularioRegistro) {
+  formularioRegistro.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nombreApellido = document
+      .getElementById("nombreApellido")
+      .value
+      .trim();
+
+    const edad = Number(document.getElementById("edad").value);
+
+    if (nombreApellido === "") {
+      alert("Por favor ingresá tu nombre");
+      return;
+    }
+
+    if (isNaN(edad) || edad <= 0) {
+      alert("Ingresá una edad válida");
+      return;
+    }
+
+    const usuario = {
+      nombre: nombreApellido,
+      edad: edad
+    };
+
+    localStorage.setItem("usuario", JSON.stringify(usuario));
+
+    alert(`Bienvenido/a ${nombreApellido} 👋`);
+
+    window.location.href = "./pages/pagina-ventas.html";
+  });
+}
+
