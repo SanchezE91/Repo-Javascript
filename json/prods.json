@@ -1,0 +1,10 @@
+[
+  { "id": 1, "nombre": "Recolector de aceite KOMMBERG", "precio": 499890 },
+  { "id": 2, "nombre": "Compresor a correa 200L KOMMBERG", "precio": 784861 },
+  { "id": 3, "nombre": "Compresor a correa 150L KOMMBERG", "precio": 699890 },
+  { "id": 4, "nombre": "Desmontadora de cubiertas KOMMBERG", "precio": 2797651 },
+  { "id": 5, "nombre": "Soldadora Inverter 180A KOMMBERG", "precio": 139890 },
+  { "id": 6, "nombre": "Soldadora Inverter MAG 200A KOMMBERG", "precio": 784861 },
+  { "id": 7, "nombre": "Soldadora MAG 3 en 1 KOMMBERG", "precio": 498890 },
+  { "id": 8, "nombre": "Soldadora MAG 4 en 1 KOMMBERG", "precio": 948851 }
+]
