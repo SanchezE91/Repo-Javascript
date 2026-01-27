@@ -24,8 +24,11 @@ function renderizarProductos(productos) {
   const tarjetas = document.querySelectorAll(".tarjeta");
   if (tarjetas.length === 0) return;
 
-  tarjetas.forEach((tarjeta, index) => {
-    const prod = productos[index];
+  tarjetas.forEach((tarjeta) => {
+    const boton = tarjeta.querySelector(".btn-carrito");
+    const id = Number(boton.dataset.id);
+
+    const prod = productos.find(p => p.id === id);
     if (!prod) return;
 
     tarjeta.querySelector(".descripcion").textContent = prod.nombre;
@@ -38,8 +41,14 @@ function activarBotones(productos) {
   const botones = document.querySelectorAll(".btn-carrito");
   if (botones.length === 0) return;
 
-  botones.forEach((boton, index) => {
+  botones.forEach((boton) => {
     boton.addEventListener("click", async () => {
+
+      const id = Number(boton.dataset.id);
+      const producto = productos.find(p => p.id === id);
+
+      if (!producto) return;
+
       const { value: cantidad } = await Swal.fire({
         title: "¿Cuántas unidades?",
         input: "number",
@@ -56,7 +65,6 @@ function activarBotones(productos) {
 
       if (!cantidad) return;
 
-      const producto = productos[index];
       const productoEnCarrito = carrito.find(p => p.id === producto.id);
 
       if (productoEnCarrito) {
@@ -67,7 +75,6 @@ function activarBotones(productos) {
 
       guardarCarrito();
 
-      // Toast agregado
       Swal.fire({
         toast: true,
         position: "top-end",
@@ -113,7 +120,6 @@ function mostrarCarrito() {
       <button class="btn-eliminar">Eliminar</button>
     `;
 
-    //  Eliminar con confirmación
     div.querySelector(".btn-eliminar").addEventListener("click", () => {
       Swal.fire({
         title: "¿Eliminar producto?",
@@ -170,7 +176,6 @@ if (btnFinalizar) {
       cancelButtonText: "Cancelar"
     }).then((result) => {
       if (result.isConfirmed) {
-        // acá después armás el link real de WhatsApp
         Swal.fire("¡Listo!", "Redirigiendo a WhatsApp 📲", "success");
       }
     });
@@ -183,21 +188,16 @@ document.addEventListener("DOMContentLoaded", () => {
   mostrarCarrito();
 });
 
-
 // ================= REGISTRO EN INDEX =================
-
 const formularioRegistro = document.getElementById("registrar-formulario");
 
 if (formularioRegistro) {
   formularioRegistro.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const nombreApellido = document
-      .getElementById("nombreApellido")
-      .value.trim();
+    const nombreApellido = document.getElementById("nombreApellido").value.trim();
     const edad = Number(document.getElementById("edad").value);
 
-    // Validación nombre
     if (nombreApellido === "") {
       Swal.fire({
         icon: "error",
@@ -207,7 +207,6 @@ if (formularioRegistro) {
       return;
     }
 
-    // Validación edad
     if (isNaN(edad) || edad <= 0) {
       Swal.fire({
         icon: "error",
@@ -217,7 +216,6 @@ if (formularioRegistro) {
       return;
     }
 
-    // Confirmación
     Swal.fire({
       title: "¿Confirmás el registro?",
       html: `<b>Nombre:</b> ${nombreApellido}<br><b>Edad:</b> ${edad}`,
@@ -230,7 +228,6 @@ if (formularioRegistro) {
         const usuario = { nombre: nombreApellido, edad };
         localStorage.setItem("usuario", JSON.stringify(usuario));
 
-        // Éxito
         Swal.fire({
           icon: "success",
           title: `Bienvenido/a ${nombreApellido} 👋`,
@@ -244,5 +241,3 @@ if (formularioRegistro) {
     });
   });
 }
-
-
